@@ -110,8 +110,8 @@ t1[0] #튜플 인덱싱
 t1[1:] #튜플 슬라이싱
 t1 * 3 #튜플 곱하기
 
-#5. 딕셔너리 자료형
 
+#5. 딕셔너리 자료형
 d1 = {1: 'hi'} #key는 1, value는 hi
 #key에는 list형은 쓸 수 없음
 d1[2] = 'b' #딕셔너리 쌍 추가
@@ -129,3 +129,107 @@ a.get('name') #key로 value 얻기
 print('name' in a) #딕셔너리 안에 해당 key가 있는지 조사
 
 #6. 집합 자료형
+s1 = set([1, 2, 3])
+print(s1)
+
+#딕셔너리와 집합모두 순서가 없는 자료형이라 인덱싱 지원X
+l1 = list(s1) #리스트로 자료형 변환
+t1 = tuple(s1) #튜플로 자료형 변환
+s2 = set([3, 4, 5, 6])
+print(s1 & s2) #교집합 구하기
+print(s1.intersection(s2)) #교집합 구하기
+print(s1 | s2) #합집합 구하기
+print(s1.union(s2)) #합집합 구하기
+print(s1 - s2) #차집합 구하기
+print(s1.difference((s2))) #차집합 구하기
+s1.add(4) #값 1개 추가
+s1.update([5, 6]) #값 여러개 추가
+s1.remove(6) #특정 값 제거
+print(s1)
+
+
+#7. 자료형의 참과 거짓
+#문자열, 리스트, 튜플, 딕셔너리 등의 값이 비어있으면 거짓이 됨
+if []:
+    print("True")
+else:
+    print("False")
+
+#8. 변수
+#변수명 = 변수에 저장할 값
+a = 3 #3은 상수가 아닌 정수형 객체
+
+a, b = ('python', 'life')
+[a,b] = ['python', 'life']
+a = b = 'python'
+c = 3
+d = 5
+c, d = d, c
+del(c) #특정한 객체를 가리키는 변수 없애기 (메모리에서 삭제)
+
+
+
+#연습문제
+#1
+kor = 80
+eng = 75
+math = 55
+avg = (kor+eng+math)/3
+print(avg)
+
+#2
+if (13%2) == 0:
+    print("짝수")
+else:
+    print("홀수")
+
+#3
+pin = "881120-1068234"
+yyyymmdd = pin[:6]
+print(yyyymmdd)
+num = pin[7:]
+print(num)
+
+#4
+print(pin[7])
+
+#5
+a = "a:b:c:d"
+b = a.replace(":", "#")
+print(b)
+
+#6
+a = [1, 3, 5, 4, 2]
+a.sort()
+a.reverse()
+print(a)
+
+#7
+a = ['Life', 'is', 'too', 'short']
+result = ' '.join(a)
+print(result)
+
+#8
+a = (1, 2, 3)
+a += (4,)
+print(a)
+
+#9 : 딕셔너리 key로는 변하는 값을 사용할 수 없음
+
+#10
+a = {'A':90, 'B':80, 'C':70}
+result = a.pop('B')
+print(a)
+print(result)
+
+#11
+a = [1, 1, 1, 2, 2, 3, 3, 3, 4, 4, 5]
+aSet = set(a)
+b = list(aSet)
+print(b)
+
+#12
+a = b = [1, 2, 3]
+a[1] = 4
+print(b) #a, b는 동일한 list 객체를 가지고 있어 b[1]의 값도 변경됨
+
