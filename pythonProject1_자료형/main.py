@@ -101,3 +101,31 @@ b.sort() #리스트 정렬
 c = [6,7]
 b.extend(c) #b에 c리스트 더하기
 print(b)
+
+
+#4. 튜플 자료형
+#리스트는 그 값의 생성, 삭제, 수정 가능 but 튜플은 그 값을 바꿀 수 없음
+t1 = (1, 2, 3, 4)
+t1[0] #튜플 인덱싱
+t1[1:] #튜플 슬라이싱
+t1 * 3 #튜플 곱하기
+
+#5. 딕셔너리 자료형
+
+d1 = {1: 'hi'} #key는 1, value는 hi
+#key에는 list형은 쓸 수 없음
+d1[2] = 'b' #딕셔너리 쌍 추가
+del d1[2] #key가 2인 딕셔너리 요소 삭제하기
+d1[1] #key가 1인 value값 얻기
+
+a = {'name': 'pey', 'phone': '01022222222', 'birth': 1118}
+a.keys() #key 리스트 만들기
+for k in a.keys():
+    print(k)
+list(a.keys()) #dict_keys 객체를 리스트로 변환
+a.values() #value 리스트 만들기
+a.clear() #모두 삭제
+a.get('name') #key로 value 얻기
+print('name' in a) #딕셔너리 안에 해당 key가 있는지 조사
+
+#6. 집합 자료형
