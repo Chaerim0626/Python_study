@@ -160,11 +160,14 @@ a.clear() #모두 삭제
 a.get('name') #key로 value 얻기
 print('name' in a) #딕셔너리 안에 해당 key가 있는지 조사
 
-#6. 집합 자료형
+
+#2-6 집합 자료형
 s1 = set([1, 2, 3])
 print(s1)
+s11 = set("Hello") #집합자료형은 set()안에 리스트를 입력하거나 문자열을 입력해 만들 수 있음
 
-#딕셔너리와 집합모두 순서가 없는 자료형이라 인덱싱 지원X
+#중복 허용 X, 순서 X
+#딕셔너리와 집합 모두 순서가 없는 자료형이라 인덱싱 지원X
 l1 = list(s1) #리스트로 자료형 변환
 t1 = tuple(s1) #튜플로 자료형 변환
 s2 = set([3, 4, 5, 6])
@@ -180,17 +183,28 @@ s1.remove(6) #특정 값 제거
 print(s1)
 
 
-#7. 자료형의 참과 거짓
+#2-7 불자료형
 #문자열, 리스트, 튜플, 딕셔너리 등의 값이 비어있으면 거짓이 됨
 if []:
     print("True")
 else:
     print("False")
+bool("python") #True
+bool("") #False
 
-#8. 변수
+#2-8 자료형의 값을 저장하는 공간 : 변수
 #변수명 = 변수에 저장할 값
 a = 3 #3은 상수가 아닌 정수형 객체
 
+a = [1, 2, 3]
+b = a #리스트 복사, a와 b는 같은 주소를 가리킴
+b = a[:] #리스트 처음요소부터 끝 요소까지 슬라이싱 해 복사, a와는 다른 주소 가리킴
+
+from copy import copy #copy 모듈 사용
+b = copy(a) #a와 b는 다른 주소 가리킴
+print (b is a) #false
+
+#변수를 만드는 여러 가지 방법
 a, b = ('python', 'life')
 [a,b] = ['python', 'life']
 a = b = 'python'
@@ -263,5 +277,5 @@ print(b)
 #12
 a = b = [1, 2, 3]
 a[1] = 4
-print(b) #a, b는 동일한 list 객체를 가지고 있어 b[1]의 값도 변경됨
+print(b) #a, b는 동일한 list 객체를 가리키고 있어 b[1]의 값도 변경됨
 
