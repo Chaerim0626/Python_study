@@ -65,5 +65,40 @@ while a < 10:
 
 #3-3 for문
 
+#전형적인 for문
+test_list = ['one', 'two', 'three']
+for i in test_list:
+    print(i)
+
+#다양한 for문
+a = [(1,2), (3,4), (5,6)]
+for (first, last) in a:
+    print(first + last)
+
+#range함수
+add = 0
+for i in range(1, 11):
+    add = add + i
+print(add)
+
+for i in range(2,10):
+    for j in range(1,10):
+        print(i*j, end="")
+    print(' ')
+
+#리스트 내포하기
+a = [1, 2, 3, 4]
+result = []
+for num in a:
+    result.append(num*3)
+print(result)
+
+result2 = [num*3 for num in a]
+print(result)
+
+#리스트 내포 : 표현식 for 항목 in 반복 가능 객체 if 조건
+
+#3장 연습문제
+
 
 
